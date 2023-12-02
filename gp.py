@@ -2,6 +2,7 @@ import requests
 import random
 import os
 
+TRANSLATION_API_KEY = os.environ.get('TRANSLATION_API_KEY')
 
 def get_translation(query, source, target):
     url = 'https://translation.googleapis.com/language/translate/v2'
