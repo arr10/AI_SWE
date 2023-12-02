@@ -5,3 +5,4 @@ Using Genetic Algorithm to create better prompts for various NLP tasks: from Rea
 ```git clone https://github.com/arr10/AI_SWE.git```  
 ### Install required packages
 ```pip install -r requirements.txt```
+### Input all environment variables into .env file (mostly used for api keys)
