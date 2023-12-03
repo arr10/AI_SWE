@@ -74,7 +74,7 @@ if(__name__ == '__main__'):
 
 
 
-# api_key = 'x1nSjm1v1syIgR58te9N5A==eVxMA9bXboxpDWfx'
+# api_key = 'ADD IT'
 
 # word = 'asking'
 # api_url = 'https://api.api-ninjas.com/v1/thesaurus?word={}'.format(word)
