@@ -9,7 +9,7 @@ from tenacity import (
     wait_random_exponential,
 )
 
-palm.configure(api_key='AIzaSyAQ8QUkbrX9DXCGDXbXv81Y4kGUhQXVvwY')
+palm.configure(api_key='YOUR KEY')
 model = 'models/text-bison-001'
 
 
