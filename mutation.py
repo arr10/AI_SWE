@@ -164,24 +164,48 @@ def get_translation(query, source, target):
         'key': TRANSLATION_API_KEY
     }
     response = requests.get(url, params=params)
-    return response.json()['data']['translations'][0]['translatedText']
+    translated_text = ""
+    try:
+        translated_text = response.json()['data']['translations'][0]['translatedText']
+    except Exception as e:
+        translated_text = query
+        print("problems with backtranslation")
+        print(response.json()['error']['message'])
+    return translated_text
 
 
 def mutation_backtranslation(prompt):
     '''Input: prompt (string), Output: backtranslated promtp (string)'''
-    languages = ['af', 'sq', 'am', 'ar', 'hy', 'as', 'ay', 'az', 'bm', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'or', 'zh', 'co', 'hr', 'cs', 'da', 'dv', 'nl', 'en', 'eo', 'et', 'ee', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gn', 'gu', 'ht', 'ha', 'he', 'or', 'iw', 'hi', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jv', 'or', 'jw', 'kn', 'kk', 'km', 'rw', 'ko', 'ku', 'ky', 'lo', 'la',
+    languages = ['af', 'sq', 'am', 'ar', 'hy', 'as', 'ay', 'az', 'bm', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'or', 'zh', 'co', 'hr', 'cs', 'da', 'dv', 'nl', 'eo', 'et', 'ee', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gn', 'gu', 'ht', 'ha', 'he', 'or', 'iw', 'hi', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jv', 'or', 'jw', 'kn', 'kk', 'km', 'rw', 'ko', 'ku', 'ky', 'lo', 'la',
                  'lv', 'ln', 'lt', 'lg', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no', 'ny', 'or', 'om', 'ps', 'fa', 'pl', 'pt', 'pa', 'qu', 'ro', 'ru', 'sm', 'sa', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so', 'es', 'su', 'sw', 'sv', 'tl', 'tg', 'ta', 'tt', 'te', 'th', 'ti', 'ts', 'tr', 'tk', 'ak', 'uk', 'ur', 'ug', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo', 'zu']
     source = 'en'
+    temp = prompt
     for language in random.sample(languages, 4):
-        prompt = get_translation(prompt, source, language)
-        source = language
-    prompt = get_translation(prompt, source, 'en')
+        
+        new_prompt = get_translation(prompt, source, language)
+        if prompt != new_prompt: 
+            prompt = new_prompt
+            source = language
+        # in case tranlsation fails do nothing
+        print(prompt)
+
+    new_prompt = get_translation(prompt, source, 'en')
+    # To ensure return is always in english
+    if prompt == new_prompt:
+        prompt = temp
+    else:
+        prompt = new_prompt
+    print(prompt)
     return prompt
 
 
-def mutate(prompt):
+def mutate(prompt, rate=1):
+    '''randomly select a mutation method and apply it to the prompt. Mutation is applied with chance of rate'''
+    p = random.random()
+    if p > rate:
+        return prompt
     r = random.randint(1, 3)
-    r = 2
+    r = 1
     match r:
         case 1:
             return mutation_backtranslation(prompt)

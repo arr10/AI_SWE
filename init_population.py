@@ -1,4 +1,4 @@
-def get_initial_popularion(type='reasoning'):
+def get_initial_population(type='reasoning'):
     if type == 'reasoning':
         return reasoning_initial_population()
     elif type == 'testcase':
