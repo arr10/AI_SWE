@@ -1,5 +1,8 @@
-def fibonacci_memoization(n, memo={}):
+def buggy_6(n, memo={}):
+    '''
+    This is a recursive function that implements the fibonacci sequence
+    '''
     if n <= 1:
         return n
     elif n not in memo:
-        memo[n] = fibonacci_memoization(n-1, memo) + fibonacci_memoization(n-2, memo)
+        memo[n] = buggy_6(n-1, memo) + buggy_6(n-2, memo)

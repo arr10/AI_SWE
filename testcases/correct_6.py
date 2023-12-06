@@ -4,7 +4,3 @@ def correct_6(n, memo={}):
     elif n not in memo:
         memo[n] = correct_6(n-1, memo) + correct_6(n-2, memo)
     return memo[n]
-
-# Example usage:
-result = correct_6(20)
-print(result)

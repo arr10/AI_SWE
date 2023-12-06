@@ -1,4 +1,4 @@
-def random_string_function(input_string):
+def correct_7(input_string):
     result = ""
 
     for char in input_string:
