@@ -3,7 +3,7 @@ import openai
 
 def crossover(parent1, parent2, rate):
     
-    openai.api_key = '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'
+    openai.api_key = ''
     if random.random() < rate:
         messages = [
         {"role": "user", "content": "Crossover following sentences and return two sentences: " + parent1 + ", " + parent2}

@@ -1,55 +1,69 @@
-import requests
-import random
+import json
 import os
+from fitness import fitness
+from crossover import crossover
+from mutation import mutate
+from selection import select
 
-TRANSLATION_API_KEY = os.environ.get('TRANSLATION_API_KEY')
 
-def get_translation(query, source, target):
-    url = 'https://translation.googleapis.com/language/translate/v2'
-    params = {
-        'q': query,
-        'source': source,
-        'target': target,
-        'key': 'AIzaSyD5flu_ECUNVLbWvzH1S7643ljsGN0ciGg'
-    }
-    response = requests.get(url, params=params)
-    return response.json()['data']['translations'][0]['translatedText']
+class Promt:
+    def __init__(self, prompt):
+        self.prompt = prompt
+        self.fitness = 0
 
-def backtranslation(prompt):
-    languages = ['af', 'sq', 'am', 'ar', 'hy', 'as', 'ay', 'az', 'bm', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'or', 'zh', 'co', 'hr', 'cs', 'da', 'dv', 'nl', 'en', 'eo', 'et', 'ee', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gn', 'gu', 'ht', 'ha', 'he', 'or', 'iw', 'hi', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jv', 'or', 'jw', 'kn', 'kk', 'km', 'rw', 'ko', 'ku', 'ky', 'lo', 'la', 'lv', 'ln', 'lt', 'lg', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no', 'ny', 'or', 'om', 'ps', 'fa', 'pl', 'pt', 'pa', 'qu', 'ro', 'ru', 'sm', 'sa', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so', 'es', 'su', 'sw', 'sv', 'tl', 'tg', 'ta', 'tt', 'te', 'th', 'ti', 'ts', 'tr', 'tk', 'ak', 'uk', 'ur', 'ug', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo', 'zu']
-    source = 'en'
-    for language in random.sample(languages, 4):
-        prompt = get_translation(prompt, source, language)
-        source = language
-    prompt = get_translation(prompt, source, 'en')
-    return prompt
+    def evaluate(self):
+        self.fitness = fitness(self)
 
-def get_initial_popularion():
-        return ["Let's think step by step.",
-        'First,',
-        "Let's think about this logically.",
-        "Let's solve this problem by splitting it into steps.",
-        "Let's be realistic and think step by step.", 
-        "Let's think like a detective step by step.",
-        'First, let’s think about it step by step.', 
-        'Let’s use logical thinking to solve this problem step by step.', 
-        'Logically speaking, we can solve this problem in the following steps.', 
-        "Let's use step-by-step thinking", 
-        "Let's break down the problem and tackle it one step at a time.",
-        "To approach this systematically, let's consider each step individually.",
-        'Let’s dissect this issue methodically, step by step.', 
-        "Let's methodically work through each part of this problem.",
-        "Step by step, let's analyze the components of this issue.", 
-        'We can solve this by carefully addressing each aspect, one step at a time.',
-        "To find a solution, let's sequentially examine every element of the problem.", 
-        "Let's sequentially think through the steps to resolve this.",
-        'By thinking in stages, we can methodically solve this problem.', 
-        "Let's take a structured approach and address this step by step.",
-        "Let's first understand the problem, extract relevant variables and their corresponding numerals, and devise a plan. Then, let's carry out the plan, calculate intermediate variables (pay attention to correct numeral calculation and commonsense), solve the problem step by step, and show the answer.", 
-        "Let's first understand the problem and devise a plan to solve the problem. Then, let's carry out the plan to solve the problem step by step.", 
-        "Let's devise a plan and solve the problem step by step.",
-        "Let's first understand the problem, extract relevant variables and their corresponding numerals, and devise a complete plan. Then, let's carry out the plan, calculate intermediate variables (pay attention to correct numerical calculation and commonsense), solve the problem step by step, and show the answer.", 
-        "Let's first understand the problem, extract relevant variables and their corresponding numerals, and make a complete plan. Then, let's carry out the plan, calculate intermediate variables (pay attention to correct numerical calculation and commonsense), solve the problem step by step, and show the answer."]
 
-if(__name__ == '__main__'):
-    print(backtranslation('Lets think like a detective, step by step.'))
+def gp(init_population):
+
+    population = init_population
+
+    pop_size = len(init_population)
+    budget = 100
+    count = 0
+
+    rate_crossover = 1  # probability of crossover happening
+
+    rate_mutation = 1  # probability of mutation happening
+
+    select_const = 10  # number of prompts to be selected for random selection
+
+    while count < budget:
+        next_gen = []
+
+        while len(next_gen) < len(population):
+
+            p1 = select(select_const, population)
+            p2 = select(select_const, population)
+
+            o1, o2 = crossover(p1.prompt, p2.prompt, rate_crossover)
+
+            o1 = mutate(o1, rate_mutation)
+            o2 = mutate(o2, rate_mutation)
+
+            o1, o2 = Promt(o1), Promt(o2)
+
+            o1.evaluate()
+            o2.evaluate()
+
+            next_gen.append(o1)
+            next_gen.append(o2)
+
+        population.extend(next_gen)
+        population = sorted(population, key=lambda x: x.fitness)
+        population = population[:pop_size]
+
+        best_solution = population[0]
+        count += 1
+        print(count, best_solution, best_solution.fitness)
+        data = {}
+        for i in range(len(population)):
+            data[i] = {
+                'prompt': population[i].prompt,
+                'fitness': population[i].fitness
+            }
+        with open(f'./results/generation_{count}_prompts.json', 'w') as f:
+            json.dump(data, f, indent=4)
+
+    return best_solution
