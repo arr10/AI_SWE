@@ -98,6 +98,7 @@ def mutation_word_level(text):
 
 def split_phrase(text):
     with CoreNLPClient(
+            start_server=True,
             annotators=['tokenize', 'pos', 'lemma', 'parse', 'depparse'],
             output_format="json",
             timeout=30000,
@@ -199,7 +200,6 @@ def mutation_backtranslation(prompt):
             prompt = new_prompt
             source = language
         # in case tranlsation fails do nothing
-        print(prompt)
 
     new_prompt = get_translation(prompt, source, 'en')
     # To ensure return is always in english
@@ -207,7 +207,6 @@ def mutation_backtranslation(prompt):
         prompt = temp
     else:
         prompt = new_prompt
-    print(prompt)
     return prompt
 
 
@@ -216,15 +215,14 @@ def mutate(prompt, rate=1):
     p = random.random()
     if p > rate:
         return prompt
-    r = random.randint(1, 3)
-    r = 1
+    r = random.randint(1, 2)
     match r:
         case 1:
             return mutation_backtranslation(prompt)
         case 2:
-            return mutation_sent_comp(prompt)
-        case 3:
             return mutation_word_level(prompt)
+        case 3:
+            return mutation_sent_comp(prompt)
 
 
 if (__name__ == '__main__'):

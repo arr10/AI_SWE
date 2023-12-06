@@ -27,8 +27,11 @@ answer_extraction_prompt = {
 file = open("datasets/mix_reasoning.json", mode="r")
 reasoning_dataset = json.load(file)
 file.close()
-file = open("datasets/gsm8k_240.json", mode="r")
+file = open("datasets/gsm8k_90.json", mode="r")
 gsm8k_dataset = json.load(file)
+file.close()
+file = open("datasets/gsm8k_10.json", mode="r")
+gsm8k_10_dataset = json.load(file)
 file.close()
 
 
@@ -78,17 +81,20 @@ def get_answer(question, template, answer_type):
             return None
         return float(result.group(0))
     elif answer_type == "multiple choice":
+        if answer_text is None:
+            return None
         return answer_text.strip()
     
 
 def fitness_reasoning(template):
     count = 0
     total = 0
-    for dataset in reasoning_dataset:
+    datasets = gsm8k_10_dataset
+    for dataset in datasets:
         answer_type = 'integer'
         if dataset in ['aqua', 'date_understanding', 'tracking_shuffled_objects', 'commonsense_qa']:
             answer_type = 'multiple choice'
-        questions = reasoning_dataset[dataset]
+        questions = datasets[dataset]
         for q in questions:
             if '.' in q['answer']:
                 answer_type = 'float'
@@ -97,19 +103,19 @@ def fitness_reasoning(template):
                 continue
             
             count += 1
-            if ans==q["answer"]:
+            if str(ans)==str(q["answer"]):
                 total += 1
             print(ans, q["answer"], count, total)
-
+    if count == 0:
+        return 0
     return total / count
 # def fitness(template, questions):
 def fitness(template):
     
     """
-    DEPENDS ON WHICH DATASET WE CHOOSE. IF MULTIPLE DATASETS, DATASET SHOULD BE PASSED AS AN ARGUMENT
     """
     
-    return random.random()
+    return fitness_reasoning(template)
 
 ######## TEST ##########
 if __name__ == "__main__":
