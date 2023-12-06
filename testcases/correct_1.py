@@ -1,4 +1,4 @@
-def calculate_average(numbers):
+def correct_1(numbers):
     total = 0
     count = 0
 
