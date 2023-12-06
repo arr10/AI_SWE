@@ -1,4 +1,4 @@
-def matrix_multiply(matrix1, matrix2):
+def correct_2(matrix1, matrix2):
     try:
         assert len(matrix1[0]) == len(matrix2)
     except AssertionError:

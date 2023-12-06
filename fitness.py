@@ -3,15 +3,20 @@ import json
 import re
 import time
 import random
+import os
 from tenacity import (
     retry,
     stop_after_attempt,
     wait_random_exponential,
 )
+from dotenv import load_dotenv
+import asyncio
+load_dotenv()
 
-palm.configure(api_key='YOUR KEY')
+api_key = os.getenv('PALM2_API_KEY')
 model = 'models/text-bison-001'
 
+palm.configure(api_key=api_key)
 
 answer_extraction_prompt = {
     "integer": "\n\n--------------------------------------\n\nReturn the answer in integer. Only the answer. No explanation. No extra words. Just one integer.",
@@ -19,6 +24,12 @@ answer_extraction_prompt = {
     "multiple choice": "\n\n--------------------------------------\n\nReturn the answer in one of A, B, C, D, E. Only the answer. No explanation. No extra words. Just one letter."
 }
 
+file = open("datasets/mix_reasoning.json", mode="r")
+reasoning_dataset = json.load(file)
+file.close()
+file = open("datasets/gsm8k_240.json", mode="r")
+gsm8k_dataset = json.load(file)
+file.close()
 
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(2))
@@ -58,47 +69,54 @@ def get_answer(question, template, answer_type):
 
     if answer_type == "integer":
         result = re.search(r'\b\d+\b', answer_text)
+        if result is None:
+            return None
         return int(result.group(0))
     elif answer_type == "float":
         result = re.search(r'\b\d+\.\d+\b', answer_text)
+        if result is None:
+            return None
         return float(result.group(0))
     elif answer_type == "multiple choice":
         return answer_text.strip()
     
 
-def fitness(template, questions):
+def fitness_reasoning(template):
+    count = 0
+    total = 0
+    for dataset in reasoning_dataset:
+        answer_type = 'integer'
+        if dataset in ['aqua', 'date_understanding', 'tracking_shuffled_objects', 'commonsense_qa']:
+            answer_type = 'multiple choice'
+        questions = reasoning_dataset[dataset]
+        for q in questions:
+            if '.' in q['answer']:
+                answer_type = 'float'
+            ans = get_answer(q['question'], template, answer_type)
+            if not ans:
+                continue
+            
+            count += 1
+            if ans==q["answer"]:
+                total += 1
+            print(ans, q["answer"], count, total)
+
+    return total / count
+# def fitness(template, questions):
+def fitness(template):
     
     """
     DEPENDS ON WHICH DATASET WE CHOOSE. IF MULTIPLE DATASETS, DATASET SHOULD BE PASSED AS AN ARGUMENT
     """
     
-    count = 0
-    total = 0
-    for q in questions:
-        options = "\n".join(q["options"])
-        problem = f"""
-        {q["question"]}\n{options} 
-        """
-        ans = get_answer(problem, template=template, answer_type="multiple choice")
-        
-        if not ans:
-            continue
-        print(q["question"], ans, q["correct"])
-        
-        count += 1
-        if ans==q["correct"]:
-            total += 1
-    
-    return total / count
-
+    return random.random()
 
 ######## TEST ##########
-
-with open("datasets/AQUA-RAT.json", mode="r") as file:
-    questions = [json.loads(line.strip()) for line in file]
-
-fit = fitness("Firstly, ", questions[:5])
-print(fit)
+if __name__ == "__main__":
+    t = time.time()
+    fit = fitness_reasoning("Firstly, ")
+    print(fit)
+    print(time.time() - t)
 
         
         

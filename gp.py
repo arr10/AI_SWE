@@ -9,15 +9,19 @@ from selection import select
 class Promt:
     def __init__(self, prompt):
         self.prompt = prompt
-        self.fitness = 0
+        self.fitness = -1
 
     def evaluate(self):
-        self.fitness = fitness(self)
+        if self.fitness == -1:
+            self.fitness = fitness(self.prompt)
 
 
 def gp(init_population):
 
     population = init_population
+    for i in range(len(population)):
+        population[i] = Promt(population[i])
+        population[i].evaluate()
 
     pop_size = len(init_population)
     budget = 100
@@ -51,12 +55,12 @@ def gp(init_population):
             next_gen.append(o2)
 
         population.extend(next_gen)
-        population = sorted(population, key=lambda x: x.fitness)
+        population = sorted(population, key=lambda x: x.fitness, reverse=True)
         population = population[:pop_size]
 
         best_solution = population[0]
         count += 1
-        print(count, best_solution, best_solution.fitness)
+        print(count, best_solution.prompt, best_solution.fitness)
         data = {}
         for i in range(len(population)):
             data[i] = {

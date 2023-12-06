@@ -1,6 +1,6 @@
 import numpy as np
 
-def np_function(input_array):
+def correct_4(input_array):
     rows, cols = input_array.shape
     result = np.zeros_like(input_array)
 
