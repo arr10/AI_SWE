@@ -30,21 +30,33 @@ def split_phrase(text):
             timeout=30000,
             memory='16G') as client:
         output = client.annotate(text)
-        parse_tree = output['sentences'][0]['parse']
-        parse_tree = ' '.join(parse_tree.split())
+        parse_tree_list = []
+        for p_t in output['sentences']:
+            parse_tree_list.append(' '.join(p_t['parse'].split()))
 
-    t = Tree.fromstring(parse_tree)
+    sentences = []
+    for parse_tree in parse_tree_list:
+        t = Tree.fromstring(parse_tree)
 
-    subtexts = []
-    for subtree in t.subtrees():
-        if subtree.label()=="S" or subtree.label()=="SBAR":
-            subtexts.append(' '.join(subtree.leaves()))
+        subtexts = []
+        for subtree in t.subtrees():
+            if subtree.label()=="S" or subtree.label()=="SBAR" or subtree.label() == "FRAG":
+                subtexts.append(' '.join(subtree.leaves()))
+        
+        for i in reversed(range(len(subtexts)-1)):
+            if subtexts[i+1] in subtexts[i]:
+                subtexts[i] = subtexts[i][0:subtexts[i].index(subtexts[i+1])]
+            else:
+                subtexts[i] = subtexts[i]
+        sentences.append(subtexts)
+    
+    merged = []
+    for sent in sentences:
+        sent[-1] += ". "
+        for s in sent:
+            merged.append(s)
 
-    presubtexts = subtexts[:]
-
-    for i in reversed(range(len(subtexts)-1)):
-        subtexts[i] = subtexts[i][0:subtexts[i].index(subtexts[i+1])]
-    return subtexts
+    return merged
 
 
 
@@ -102,5 +114,5 @@ def mutation_sent_comp(prompt):
 
 
 
-text = "Please follow the prompt as accurately as possible, wihtout any sort of swear words"
+text = "What a beautiful day it is. I wish to jump over the fences, go prancing across the meadow"
 print(mutation_sent_comp(text))
