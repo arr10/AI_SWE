@@ -1,3 +1,5 @@
+'''Write a Python function named 'correct_2' that takes two matrices represented as lists of lists (matrix1 and matrix2) as input and returns their matrix product if the multiplication is valid. '''
+
 def correct_2(matrix1, matrix2):
     try:
         assert len(matrix1[0]) == len(matrix2)

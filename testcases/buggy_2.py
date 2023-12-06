@@ -1,4 +1,6 @@
-def matrix_multiply(matrix1, matrix2):
+'''Write a Python function named 'buggy_2' that takes two matrices represented as lists of lists (matrix1 and matrix2) as input and returns their matrix product if the multiplication is valid. '''
+
+def buggy_2(matrix1, matrix2):
     result = []
 
     for i in range(len(matrix1)):

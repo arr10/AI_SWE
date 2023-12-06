@@ -1,8 +1,6 @@
 def buggy_1(numbers):
-    """
-    
-    
-    """
+    '''Write a Python function named 'buggy_1' that takes a list of numbers as input and calculates the average of those numbers.'''
+
     total = 0
     count = 0
 
