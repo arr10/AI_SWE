@@ -1,4 +1,4 @@
-def test1():
+def test_cases_1():
     numbers = [2, 4, 6, 8, 10]
     assert buggy_1(numbers) == 6.0
 
@@ -12,4 +12,4 @@ def test1():
                -10, -1, 7, -10, 5, -8, 9, 9]
     assert buggy_1(numbers) == -0.03
 
-test1()
+test_cases_1()
