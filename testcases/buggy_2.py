@@ -1,6 +1,16 @@
-'''Write a Python function named 'buggy_2' that takes two matrices represented as lists of lists (matrix1 and matrix2) as input and returns their matrix product if the multiplication is valid. '''
-
 def buggy_2(matrix1, matrix2):
+    """
+    Multiply two matrices.
+
+    Parameters:
+    - matrix1 (list of lists): The first matrix.
+    - matrix2 (list of lists): The second matrix.
+
+    Returns:
+    list of lists: The result of multiplying the two matrices.
+    If the matrices are not compatible for multiplication, returns 0.
+    """
+    
     result = []
 
     for i in range(len(matrix1)):
