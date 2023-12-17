@@ -61,7 +61,7 @@ def palm_completion(prompt):
 
 
 default_prompt = '''
-For the following function generate input. Generate only one set of arguments and do not output any other text. If argument is a pair of integers, generate a pair of integers. If it is a list, generate a list.
+For the following function generate input. Generate only one set of arguments and do not output anyother text. If argument is a pair of integers, generate a pair of integers. If it is a list, generate a list.
 DO NOT OUTPUT ANY OTHER TEXT
 '''
 

@@ -60,7 +60,7 @@ def bar(x):
     The function doubles each element of the list
     '''
     for i in range(x):
-        x[i] *= 2
+        x[i] = 2
     
     return x
 
@@ -83,7 +83,7 @@ def palm_completion(prompt):
 
 default_prompt = '''
 The following is a buggy code. Please understand what the code does from the doc string. Then output the correct code.
-DO NOT OUTPUT ANY OTHER TEXT. ONLY OUTPUT THE CODE. USE PROPER INDENTATION.
+DO NOT OUTPUT ANY OTHER TEXT. ONLY OUTPUT THE CODE. USE PROPER INDENTATION. ONLY RETURN THE CORRECTED CODE. DO NOT RETURN 
 '''
 
 code = '''
@@ -97,21 +97,48 @@ def works(u, z):
 # print(output)
 
 
+# code = '\n'
+# fp = 'testcases/buggy_6.py'
+# with open(fp, 'r') as f:
+#     code += f.read()
+
+# code += "\n\n"
+# fp2 = 'testcases/test_cases_6.py'
+# with open(fp2, 'r') as g:
+#     code += g.read()
+
+# print(code)
+
 
 def fitness(prompt):
-    file_name = 'correct_'
+    file_name = 'buggy_'
     correct = 0
 
-    for i in range(1, 6):
+    for i in range(6, 11):
         fp = 'testcases/' + file_name + str(i) + '.py'
         with open(fp, 'r') as f:
             code = f.read()
         this_prompt = global_prompt.format(variable_prompt=prompt, variable_code=code)
         output = palm_completion(this_prompt)
 
-        ret_code = passes(file_name+str(i), [output])
+        print("OUTPUT:\n", output)
 
-        if ret_code == 0:
+        ex_code = output + "\n\n"
+        fp2 = 'testcases/test_cases_' + str(i) + '.py'
+
+        with open(fp2, 'r') as g:
+            ex_code += g.read()
+
+        print("COMPLETE ONE: \n\n\n\n")
+        print(ex_code)
+        
+        
+
+        result = subprocess.run(['python', '-c', ex_code], stdout=subprocess.PIPE, text=True)
+        print("RESULT: ", result.returncode)
+        print("\n\n\n\n")
+
+        if result.returncode == 0:
             correct += 1
             print("yey")
         
@@ -120,5 +147,3 @@ def fitness(prompt):
 
 
 print(fitness(default_prompt))
-
-# fitness_testcase_generation('correct_1', [[1,2]])

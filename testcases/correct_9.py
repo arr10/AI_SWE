@@ -1,4 +1,4 @@
-def find_primes_in_range(start, end):
+def correct_9(start, end):
     """
     Find prime numbers within a given range.
 
@@ -25,3 +25,11 @@ def find_primes_in_range(start, end):
     primes_in_range = [x for x in range(max(2, start), end + 1) if is_prime[x]]
     return primes_in_range
 
+def test_cases_9():
+    assert correct_9(1, 20) == [2, 3, 5, 7, 11, 13, 17, 19]
+    assert correct_9(15, 21) == [17, 19]
+    assert correct_9(99, 121) == [101, 103, 107, 109, 113]
+
+
+test_cases_9()
+# print(correct_9(1, 20))

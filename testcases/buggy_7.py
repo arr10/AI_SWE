@@ -1,10 +1,20 @@
 def buggy_7(input_string):
-    '''
-    This function reverses the case of the alphabetic characters in the input string.
-    If the alphabetic char is lower case, it makes it upper case and vice verse. 
-    It leaves the numeric and other characters as it is
-    '''
-    
+    """
+    Swap the case of alphabetic characters in a given string while leaving non-alphabetic characters unchanged.
+
+    Parameters:
+    - input_string (str): The input string to perform case swapping on.
+
+    Returns:
+    str: A new string with the case of alphabetic characters swapped and non-alphabetic characters unchanged.
+
+    Notes:
+    - The function iterates through each character in the input string.
+    - If a character is alphabetic and in lowercase, it is converted to uppercase.
+    - If a character is alphabetic and in uppercase, it is converted to lowercase.
+    - Non-alphabetic characters are unchanged.
+    - The result is a new string with the desired case-swapping applied.
+    """
     result = ""
 
     for char in input_string:
