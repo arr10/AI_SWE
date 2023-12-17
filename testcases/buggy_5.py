@@ -1,5 +1,13 @@
-'''Write a Python function named 'buggy_5' that takes a string ('input_string') and an integer ('input_int') as input parameters. Concatenate the string and the string representation of the integer, and return the resulting string.'''
-
 def buggy_5(input_string, input_int):
+    """
+    Concatenate a string and an integer.
+
+    Parameters:
+    - input_string (str): The input string.
+    - input_int (int): The input integer.
+
+    Returns:
+    str: The result of concatenating the string and the integer.
+    """
     result = input_string + input_int
     return result
