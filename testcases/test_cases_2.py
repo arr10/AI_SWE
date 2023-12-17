@@ -10,7 +10,7 @@ def test1():
     
     expected_result = 0
     
-    assert  matrix_multiply(matrix1, matrix2) == expected_result
+    assert  buggy_2(matrix1, matrix2) == expected_result
     
 def test2():
     matrix1 = [[407, 711, 257, 30, 874], 
@@ -35,7 +35,7 @@ def test2():
                        [867842, 982686, 837376, 1328676, 1126937, 1238119, 824355], 
                        [966210, 1499085, 1069739, 1796378, 1707884, 1536334, 1175205]]
     
-    assert  matrix_multiply(matrix1, matrix2) == expected_result
+    assert  buggy_2(matrix1, matrix2) == expected_result
     
 def test3():
     matrix1 = [[0, 3], [2, 4], [5, 10], [4, 4], [1, 1], 
@@ -56,4 +56,4 @@ def test3():
                        [9, 62, 77, 142, 97, 87], 
                        [9, 32, 65, 82, 91, 51]]
     
-    assert  matrix_multiply(matrix1, matrix2) == expected_result    
+    assert  buggy_2(matrix1, matrix2) == expected_result    
