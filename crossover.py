@@ -17,7 +17,7 @@ def crossover(parent1, parent2, rate):
             messages=[
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.7
+            temperature=1.0
         )
 
         generated_sentence = response.choices[0].message.content
@@ -31,7 +31,7 @@ def crossover(parent1, parent2, rate):
             messages=[
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.7
+            temperature=1.0
         )
 
         generated_sentence = response.choices[0].message.content
