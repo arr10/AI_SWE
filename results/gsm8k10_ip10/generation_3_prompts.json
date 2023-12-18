@@ -1,0 +1,102 @@
+{
+    "0": {
+        "prompt": "Let's think about this logically.",
+        "fitness": 0.7
+    },
+    "1": {
+        "prompt": "Let&#39;s think like a detective and solve this problem by removing it step by step.",
+        "fitness": 0.6666666666666666
+    },
+    "2": {
+        "prompt": "Army_of_the_Righteous's cogitate like a researcher and solve this trouble by testing step by stone's_throw.",
+        "fitness": 0.6666666666666666
+    },
+    "3": {
+        "prompt": "Let&#39;s go to the first event thinking like a detective, step by step investigating and solving this mystery.",
+        "fitness": 0.6666666666666666
+    },
+    "4": {
+        "prompt": "\"Let's think like a policeman and identify a suspect for them step by step.\"",
+        "fitness": 0.6666666666666666
+    },
+    "5": {
+        "prompt": "Let's think like a detective and identify the main things that can be used as evidence.",
+        "fitness": 0.6666666666666666
+    },
+    "6": {
+        "prompt": "\"Let's think like a detective and identify the main investigative step, just like a policeman would do.\"",
+        "fitness": 0.6666666666666666
+    },
+    "7": {
+        "prompt": "Let&#39;s solve this problem step by step and think like a detective.",
+        "fitness": 0.625
+    },
+    "8": {
+        "prompt": "\"Let's think like a detective and solve this problem by analyzing it step by step, let's think like a detective solve this problem.\"",
+        "fitness": 0.625
+    },
+    "9": {
+        "prompt": "First,",
+        "fitness": 0.6
+    },
+    "10": {
+        "prompt": "Let's think like a detective step by step.",
+        "fitness": 0.6
+    },
+    "11": {
+        "prompt": "Let's solve this problem by splitting it into steps.",
+        "fitness": 0.6
+    },
+    "12": {
+        "prompt": "Let's think step by step.",
+        "fitness": 0.6
+    },
+    "13": {
+        "prompt": "Let&#39;s think like a researcher and solve this problem, breaking it down step by step.",
+        "fitness": 0.6
+    },
+    "14": {
+        "prompt": "Let&#39;s determine what the problem really is",
+        "fitness": 0.6
+    },
+    "15": {
+        "prompt": " let 's clear this problem by identify the primary outcome at ambit and split it into ill-treat.",
+        "fitness": 0.6
+    },
+    "16": {
+        "prompt": "Let&#39;s identify the main event and break it down into stages",
+        "fitness": 0.6
+    },
+    "17": {
+        "prompt": "Let&#39;s become a detective and solve this problem by breaking it step by step like a detective",
+        "fitness": 0.6
+    },
+    "18": {
+        "prompt": "Let&#39;s think like a policeman and identify the main things that can happen by looking for them step by step.",
+        "fitness": 0.6
+    },
+    "19": {
+        "prompt": "\"Let's solve this problem by analyzing it step by step, just like we did before.\"",
+        "fitness": 0.6
+    },
+    "20": {
+        "prompt": "\"Go step by step and make the primary event at reach by analyzing it and solving this problem.\"",
+        "fitness": 0.6
+    },
+    "21": {
+        "prompt": "Let&#39;s solve this problem by analyzing it step by step, creating the main events of our scope and dividing it into o steps.",
+        "fitness": 0.6
+    },
+    "22": {
+        "prompt": "Let&#39;s solve this problem by defining the main event and dividing it into phases.",
+        "fitness": 0.6
+    },
+    "23": {
+        "prompt": "\"Let's solve this problem by identifying the main event and breaking it down into steps.\"",
+        "fitness": 0.6
+    },
+    "24": {
+        "prompt": "Let&#39;s think like a detective and solve this problem by analyzing it step by step, stone by stone.",
+        "fitness": 0.5714285714285714
+    }
+}

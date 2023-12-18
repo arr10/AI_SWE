@@ -1,0 +1,102 @@
+{
+    "0": {
+        "prompt": "Let's think step by step.",
+        "fitness": 0.8
+    },
+    "1": {
+        "prompt": "Let's be realistic and think step by step.",
+        "fitness": 0.8
+    },
+    "2": {
+        "prompt": "let's understand the main concepts.",
+        "fitness": 0.8
+    },
+    "3": {
+        "prompt": "First, let\u2019s tackle the problem from a different perspective.",
+        "fitness": 0.8
+    },
+    "4": {
+        "prompt": "Let&#39;s think about it and solve this problem by breaking it down into steps.",
+        "fitness": 0.8
+    },
+    "5": {
+        "prompt": "Kickoff, first of all, I go kick off.",
+        "fitness": 0.75
+    },
+    "6": {
+        "prompt": "The first step is the beginning of a new essay",
+        "fitness": 0.7142857142857143
+    },
+    "7": {
+        "prompt": "Let's solve this problem by splitting it into steps.",
+        "fitness": 0.7
+    },
+    "8": {
+        "prompt": "First,",
+        "fitness": 0.7
+    },
+    "9": {
+        "prompt": "Let's think about this logically.",
+        "fitness": 0.7
+    },
+    "10": {
+        "prompt": "\"Solve the math problem by splitting it into steps, first.\"",
+        "fitness": 0.7
+    },
+    "11": {
+        "prompt": "let's gather all the necessary information.",
+        "fitness": 0.7
+    },
+    "12": {
+        "prompt": "\"First, let's solve this problem separately then we can solve them together\"",
+        "fitness": 0.7
+    },
+    "13": {
+        "prompt": "Let&#39;s break this problem down into steps and think it through.",
+        "fitness": 0.7
+    },
+    "14": {
+        "prompt": "solve this problem by breaking it into small parts.",
+        "fitness": 0.7
+    },
+    "15": {
+        "prompt": "\"Do things one by one to start, to ensure thoroughness.\"",
+        "fitness": 0.7
+    },
+    "16": {
+        "prompt": "First, let&#39;s go through them one by one.",
+        "fitness": 0.7
+    },
+    "17": {
+        "prompt": "Let&#39;s go through each topic separately, from opening, starting, and continuing. First, I buy salt and time, I buy salt. New Idea: First, I bake desserts so I don&#39;t have to buy things at the store.",
+        "fitness": 0.7
+    },
+    "18": {
+        "prompt": " I 'm bad, but it be non possible to bring_forth a meaningful novel condemnation by baffle over the Saame doom twice( `` number_one, first, '') as in_that_respect would be no new information or structure to make a ordered yield. Could you please allow_for dissimilar prison_term that you would like to be hybridise over?",
+        "fitness": 0.6666666666666666
+    },
+    "19": {
+        "prompt": "First, let&#39;s address these issues separately; Initiative, started.",
+        "fitness": 0.6666666666666666
+    },
+    "20": {
+        "prompt": "Let's start with the kickoff one at a time.",
+        "fitness": 0.6666666666666666
+    },
+    "21": {
+        "prompt": " allow 's plow these proceeds together; first_step, take_off.",
+        "fitness": 0.6666666666666666
+    },
+    "22": {
+        "prompt": "\"First, on my own initiative, let's address these questions separately; I steal food from homeless people's store. Solve the math problem by splitting it into steps, first.\"",
+        "fitness": 0.6666666666666666
+    },
+    "23": {
+        "prompt": " have 's start with this problem one by one, I pass_away to the lay_in to bargain foodstuff and starting_time, I operate to slip grocery_store at the entrepot.",
+        "fitness": 0.625
+    },
+    "24": {
+        "prompt": "First, let&#39;s look at these questions one by one; I used to run by myself to steal things from the store. The new brothers criticized this last conflict: Let us first look at these questions separately; I stole food from homeless people on my own initiative and solved this problem separately.",
+        "fitness": 0.625
+    }
+}

@@ -1,0 +1,102 @@
+{
+    "0": {
+        "prompt": "Let's think step by step.",
+        "fitness": 0.8
+    },
+    "1": {
+        "prompt": "Let's be realistic and think step by step.",
+        "fitness": 0.8
+    },
+    "2": {
+        "prompt": "let's understand the main concepts.",
+        "fitness": 0.8
+    },
+    "3": {
+        "prompt": "First, let\u2019s tackle the problem from a different perspective.",
+        "fitness": 0.8
+    },
+    "4": {
+        "prompt": "Kickoff, first of all, I go kick off.",
+        "fitness": 0.75
+    },
+    "5": {
+        "prompt": "The first step is the beginning of a new essay",
+        "fitness": 0.7142857142857143
+    },
+    "6": {
+        "prompt": "Let's solve this problem by splitting it into steps.",
+        "fitness": 0.7
+    },
+    "7": {
+        "prompt": "First,",
+        "fitness": 0.7
+    },
+    "8": {
+        "prompt": "Let's think about this logically.",
+        "fitness": 0.7
+    },
+    "9": {
+        "prompt": "\"Solve the math problem by splitting it into steps, first.\"",
+        "fitness": 0.7
+    },
+    "10": {
+        "prompt": "let's gather all the necessary information.",
+        "fitness": 0.7
+    },
+    "11": {
+        "prompt": "\"First, let's solve this problem separately then we can solve them together\"",
+        "fitness": 0.7
+    },
+    "12": {
+        "prompt": " I 'm bad, but it be non possible to bring_forth a meaningful novel condemnation by baffle over the Saame doom twice( `` number_one, first, '') as in_that_respect would be no new information or structure to make a ordered yield. Could you please allow_for dissimilar prison_term that you would like to be hybridise over?",
+        "fitness": 0.6666666666666666
+    },
+    "13": {
+        "prompt": "First, let&#39;s address these issues separately; Initiative, started.",
+        "fitness": 0.6666666666666666
+    },
+    "14": {
+        "prompt": "Let's start with the kickoff one at a time.",
+        "fitness": 0.6666666666666666
+    },
+    "15": {
+        "prompt": " have 's start with this problem one by one, I pass_away to the lay_in to bargain foodstuff and starting_time, I operate to slip grocery_store at the entrepot.",
+        "fitness": 0.625
+    },
+    "16": {
+        "prompt": "First of all,",
+        "fitness": 0.6
+    },
+    "17": {
+        "prompt": "First, let&#39;s solve this problem separately.",
+        "fitness": 0.6
+    },
+    "18": {
+        "prompt": "\"First, let's solve this problem separately, one by one to start.\"",
+        "fitness": 0.6
+    },
+    "19": {
+        "prompt": "First, let&#39;s tackle this issue separately, let&#39;s take the first step",
+        "fitness": 0.6
+    },
+    "20": {
+        "prompt": "Actually, let&#39;s start with this shooting problem.",
+        "fitness": 0.6
+    },
+    "21": {
+        "prompt": "\"From the opening, beginning, get-go, let's solve each problem separately.\"",
+        "fitness": 0.6
+    },
+    "22": {
+        "prompt": "solve this problem separately",
+        "fitness": 0.6
+    },
+    "23": {
+        "prompt": "First, let&#39;s look at these questions individually; On my own initiative, I steal food from homeless people. Newcomers criticize the latter conflict: First, let&#39;s address these issues separately; On initiative, I run to steal supplies from the store.",
+        "fitness": 0.6
+    },
+    "24": {
+        "prompt": "First, I buy salt and show the time, salt to buy. New idea: For starters, I&#39;m knitting sweets so I don&#39;t have to buy groceries at the grocery store.",
+        "fitness": 0.6
+    }
+}
