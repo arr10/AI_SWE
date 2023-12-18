@@ -2,6 +2,7 @@ import subprocess
 import google.generativeai as palm
 import os
 from dotenv import load_dotenv
+from tqdm import tqdm
 
 load_dotenv()
 
@@ -43,8 +44,8 @@ def foo(a, b):
     '''
     return a+b
 
------------------------------------------------------------------
-Buggy Code:
+#-----------------------------------------------------------------
+#Buggy Code:
 def bar(x):
     '''
     The function doubles each element of the list
@@ -64,7 +65,7 @@ def bar(x):
     
     return x
 
------------------------------------------------------------------
+#-----------------------------------------------------------------
 Code: {variable_code}
 """
 
@@ -83,7 +84,8 @@ def palm_completion(prompt):
 
 default_prompt = '''
 The following is a buggy code. Please understand what the code does from the doc string. Then output the correct code.
-DO NOT OUTPUT ANY OTHER TEXT. ONLY OUTPUT THE CODE. USE PROPER INDENTATION. ONLY RETURN THE CORRECTED CODE. DO NOT RETURN 
+
+1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! 
 '''
 
 code = '''
@@ -99,13 +101,16 @@ def bugfix_fitness(prompt):
     file_name = 'buggy_'
     correct = 0
 
-    for i in range(1, 21):
+    for i in tqdm(range(1, 21)):
         fp = 'testcases/' + file_name + str(i) + '.py'
         with open(fp, 'r') as f:
             code = f.read()
         this_prompt = global_prompt.format(variable_prompt=prompt, variable_code=code)
         output = palm_completion(this_prompt)
-
+        if not output:
+            continue
+        # print("********************************\n",output,"\n********************************\n")
+        output = output.replace("```python", "").replace("```", "")
         ex_code = output + "\n\n"
         fp2 = 'testcases/test_cases_' + str(i) + '.py'
 

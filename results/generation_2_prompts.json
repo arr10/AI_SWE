@@ -1,0 +1,102 @@
+{
+    "0": {
+        "prompt": "Review the provided function and its docstring. There's a bug in the function. Correct it so that the function's output matches the docstring's intended behavior. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 10
+    },
+    "1": {
+        "prompt": "Analyze the given function which is not performing as its docstring describes. Find the bug and adjust the function accordingly. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 10
+    },
+    "2": {
+        "prompt": "Identify the bug in the given function that causes it to deviate from its docstring description. Correct the function to match the docstring. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 10
+    },
+    "3": {
+        "prompt": " There be a discrepancy between the supply single-valued_function 's conduct and its docstring. Find and gear_up the error in the run. manage not output ANY other school_text. only turnout THE code. use right indent. only_if reappearance THE make_up encipher. manage non change THE work name!!!",
+        "fitness": 10
+    },
+    "4": {
+        "prompt": "\"Refactor the code without changing the function name.\"",
+        "fitness": 10
+    },
+    "5": {
+        "prompt": "There is an inconsistency between the behavior of the provided function and its documentation chain. Find and fix errors in the function. RETURN ONLY CORRECTING CODE.",
+        "fitness": 10
+    },
+    "6": {
+        "prompt": "The behavior of the given function does not match its docstring. Identify where it deviates and adjust the function to match the intended behavior. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 9
+    },
+    "7": {
+        "prompt": "You're faced with a function that isn't working as per its docstring. Identify the problem in the function and correct it accordingly. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 9
+    },
+    "8": {
+        "prompt": "You are presented with a function which is not behaving as expected according to its docstring. Identify the bug and provide the corrected version of the function. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 9
+    },
+    "9": {
+        "prompt": "Given a function and its docstring, there is a misalignment in the function's actual performance versus what is described in the docstring. Your task is to diagnose the error within the function and rectify it.",
+        "fitness": 9
+    },
+    "10": {
+        "prompt": " There personify a discrepancy between the put_up social_occasion 's behavior and its docstring. Find and deposit the error in the run. solely return THE corrected code.",
+        "fitness": 9
+    },
+    "11": {
+        "prompt": "Examine the given function and its docstring. The function contains an error. Find and fix the error to align the function's behavior with the docstring's description. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 8
+    },
+    "12": {
+        "prompt": "A function with a bug is given alongside its docstring. Your task is to align the function's actual behavior with that described in the docstring. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 8
+    },
+    "13": {
+        "prompt": " commit a operate and its docstring, the occasion 's behavior do non rival with what be report in the docstring. The project be to identify and set the error in the officiate to make it comply with the guidepost specify in the docstring. get_along not output ANY other textual_matter. lonesome output THE code. use_of_goods_and_services proper indentation. exclusively return THE counterbalance code. do not change THE function make!!!",
+        "fitness": 8
+    },
+    "14": {
+        "prompt": " give a run and its docstring, in_that_respect be a misalignment in the operate 's literal performance versus what equal describe in the docstring. Your chore be to diagnose the error within the function and rectify it to assure it stand_by to the docstring 's guideline. exclusively return the chasten write_in_code, with right indention, without output any other text_edition. The map name should non follow exchange and the pass appreciate should be none.",
+        "fitness": 8
+    },
+    "15": {
+        "prompt": "def align_function_behavior(): &quot;A function that matches the actual behavior of the function as defined in the docstring.&quot; &quot; # Bugfix code is returned below",
+        "fitness": 8
+    },
+    "16": {
+        "prompt": "Depending on the function and its docstring, the behavior of the function differs from what is described in the docstring. Your job is to spot the deviations and modify the function to match the expected behavior. 1. Do not enter any other text. 2. ONLY CODE PROBLEM. 3. USE IT RIGHT. 4. ONLY the revised CODE will be refunded. 5. DO NOT CHANGE THE FUNCTION NAME!!!",
+        "fitness": 8
+    },
+    "17": {
+        "prompt": "Given the tasks and instructions, identify errors in the behavior of the tasks and correct them according to the instructions specified in the document. 1. Do not publish other messages. 2. Just extract the code. 3. Use the correct outlet. 4. Just return the correct code. 5. Do not change the function name!!!",
+        "fitness": 8
+    },
+    "18": {
+        "prompt": "Since this is a function and a docstring, executing the function with the contents specified in the docstring is false. All you have to do is check the error in the process and correct it to be consistent with the guidelines of the document. 1. Don&#39;t give anything away. 2. Just disconnect from the program. 3. Practice ownership. 4. Return only the index. 5. Do not change the job name!!! def diagnostic_function(function, docstring): &quot;&quot;&quot; Submit a function with docstring, check for an error in the function and correct it according to docstring instructions. Parameters: function (function): Function to check .docstring (str) : For functions The required document string -Returns a number: Corrected_code: Corrected the code to match the document string guidelines.",
+        "fitness": 8
+    },
+    "19": {
+        "prompt": "There is a discrepancy between the provided function's behavior and its docstring. Find and fix the error in the function. \n\n1. DO NOT OUTPUT ANY OTHER TEXT.\n2. ONLY OUTPUT THE CODE.\n3. USE PROPER INDENTATION.\n4. ONLY RETURN THE CORRECTED CODE.\n5. DO NOT CHANGE THE FUNCTION NAME!!! ",
+        "fitness": 7
+    },
+    "20": {
+        "prompt": "The function and its documentation contain errors in the actual execution of the function as compared to what is specified in the given document. Your job is to find errors in the job and follow its documentation guidelines. 1. Don&#39;t post anything else. 2. Only use status 3. Education. 4. Display only the correct version. 5. Do not change the system name!!! An item is given in the package and its documentation. Your job is to match the correct behavior of the function with what is described in the docstring. &quot;python def align_function_with_docstring(nums):&quot; &quot;&quot; This function takes a list of integers and returns the sum of all matching numbers in the list &quot;&quot;&quot; all matching numbers in the list = 0 : num %2 == 0 : sum + = num return sum ``",
+        "fitness": 7
+    },
+    "21": {
+        "prompt": "\"The current [BLANK] task is to diagnose and fix the error within the function to align with the guidelines provided in the docstring.\"",
+        "fitness": 7
+    },
+    "22": {
+        "prompt": "Given a function and its docstring, the behavior of the function should match the description provided in the docstring. However, there is a deviation in the function's actual implementation. Your task is to identify where the deviation occurs and modify the implementation where the function deviates from the docstring and adjust it to match the intended behavior.",
+        "fitness": 7
+    },
+    "23": {
+        "prompt": "```python\ndef add(x, y):\n  \"\"\"This function accepts two parameters, x and y, and returns their sum. \"\"\"\n  sum = x + y\n  return sum\n```",
+        "fitness": 5
+    },
+    "24": {
+        "prompt": "This function handles specific tasks by performing specific calculations. Provide two values as input, namely vitamin B complex, and pass the core of the box. a= 2 B_vitamin= 3 events= a** 2+ B_complex** 2 Deriving hark_back This function takes two parameters, x and y, and returns their sum.",
+        "fitness": 5
+    }
+}

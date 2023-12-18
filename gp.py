@@ -26,7 +26,6 @@ class Promt:
 
 
 def gp(init_population, data_type):
-
     population = init_population
     population = random.sample(population, 10)
     for i in range(len(population)):
@@ -36,7 +35,7 @@ def gp(init_population, data_type):
     pop_size = len(init_population)
     budget = 10
     count = 0
-
+    
     rate_crossover = 1  # probability of crossover happening
 
     rate_mutation = 1  # probability of mutation happening

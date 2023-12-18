@@ -1,4 +1,4 @@
-def find_peaks(input):
+def buggy_11(input):
     """
     Finds indices where the element is smaller than or equal to both its adjacent elements in the input list (super buggy version).
 

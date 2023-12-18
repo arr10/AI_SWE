@@ -15,7 +15,7 @@ def buggy_16(n):
     - For n greater than 1, the function recursively calculates the Fibonacci number for n-1 and n-2,
       sums them, and returns the result.
     """
-    if n == 0:
+    if n >= 0:
         return 0
     else:
         return buggy_16(n - 1) + buggy_16(n - 2)
