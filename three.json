@@ -1,0 +1,102 @@
+{
+    "0": {
+        "prompt": " This be a procurator sentence.",
+        "fitness": 10
+    },
+    "1": {
+        "prompt": " From the docstring, distinguish the limit and extreme within which the single-valued_function follow require to operate. write python tryout case that specifically test the routine at these limit, assure it do right at its boundary, and vulgarize how this function interact with early factor and Florida_key out a real-world scenario where this part might follow use. pen a python quiz reference that try these fundamental_interaction and integration breaker point and imitate this meat maltreater scenario. crossing_over: From the docstring, key the demarcation and extreme within which the function be bear to operate. generalise how this function interact with other component and key it out a real-world scenario where this part might atomic_number_4 habituate. write a Python quiz case that examine these fundamental_interaction and integrating ledgeman point and model this meaning maltreater scenario.",
+        "fitness": 10
+    },
+    "2": {
+        "prompt": "Generate Python test cases to check the compatibility of the function with different environments or Python versions, as inferred from the docstring.",
+        "fitness": 9
+    },
+    "3": {
+        "prompt": "\"From the docstring, infer how this function interacts with the file system\"",
+        "fitness": 9
+    },
+    "4": {
+        "prompt": "Summarize from the text how the function interacts with other elements and identify real-life situations that might be typical of this class. Use a Python script to explore these interactions and endpoints and model this drug abuse scenario. Using this tutorial, identify a real-world scenario that will use this feature and write a Python test that simulates that custom scenario. New sentence: Summarize from the documentation how the function interacts with other elements and identify possible common real-life situations for this class. Use a Python query script to explore these interfaces and integration breakpoints and model this usage scenario using the principles to identify real-world scenarios where this feature might be used. Also, write a Python test that mimics this user script.",
+        "fitness": 9
+    },
+    "5": {
+        "prompt": "From the study, broadly speaking, how this role relates to other components and the key to the real-world scenario in which this component can be applied. Write a Python query model that evaluates these relationships and breaks the integrations and simulates this abuse scenario. Additionally, using a document string, describing a real-world scenario where this function can be used, and writing a Python test that simulates this user scenario.",
+        "fitness": 8
+    },
+    "6": {
+        "prompt": " From the docstring, name the demarcation and extreme within which the function be expect to operate. indite Python psychometric_test causa that specifically prove the serve at these boundary, guarantee it comport correctly at its boundaries., From the docstring, generalise how this subroutine interact with other component and key a real-world scenario where this part might represent habituate. write a python test fictitious_character that examination these fundamental_interaction and desegregation breaker_point and assume this user scenario. crossover: From the docstring, name the trammel and extreme within which the subprogram comprise ask to maneuver. From the docstring, popularise how this role interact with other ingredient and keystone out a real-world scenario where this split might equal use. write Python test case that specifically test the map at these limit, ensure it deport aright at its limit. indite a Python test character that try_out these interaction and integration breaker point and assume this heart maltreater scenario. New judgment_of_conviction: `` In order to see_to_it proper functionality and reliability, the function 's restrict and extreme should be name from the docstring, while as_well infer its interaction with other component. A real-world scenario where this function could be habituate might necessitate utilize it within a composite software system for data_point analysis. Python trial_run face should and_so embody spell to trial_run the routine at its restrict, corroborative its objurgate conduct at the bound. furthermore, create a python quiz graphic_symbol would earmark for see the fundamental_interaction and integrating breakers period, imitate a scenario involve gist maltreater. ''",
+        "fitness": 8
+    },
+    "7": {
+        "prompt": " Can you clarify what you entail by `` stop follow argumentation and render a young sentence '' and `` employ document telephone_circuit ''?",
+        "fitness": 8
+    },
+    "8": {
+        "prompt": "Learn how this feature interacts with other components in the documentation.",
+        "fitness": 7
+    },
+    "9": {
+        "prompt": " `` `` '' crossover_voter the follow conviction and bring_back a fresh doom: use the docstring, make a python tribulation case that can equal used for a statistical_regression essay. make indisputable the new vary in the part dress non time_out its live functionality, as report in the docstring. key a real-world scenario where this go might equal utilized and compose a python try_out display_case that simulate this user scenario. From the docstring, deduce how this part interact with other ingredient and indite a Python test case that exam these fundamental_interaction and integration point. heel all the parameter the function take. For each parameter, make a trial case in python that specifically trial unlike value, let_in edge cases. '' '' ''",
+        "fitness": 7
+    },
+    "10": {
+        "prompt": "\"From the docstring, infer how this function interacts with other components and determine the expected results. Write a unit test case that tests these interactions and integration points, and craft Python test cases that compare the actual output of the function with these expected results under different scenarios.\"",
+        "fitness": 7
+    },
+    "11": {
+        "prompt": " The authenticated mountain_range land `` habit the entropy in the docstring, limit the expect lead of the federal_agency for several stimulus, run_into to it that the overbold change in the mapping coif not take out its well functionality as position in a real-world scenario where this situation might equal exploited and wiliness Python test character that comparison the genuine concede of the affair with these expect outcome under unlike scenario. '' based on this data, it be indecipherable what be stand_for by `` stay follow line and return a New time '' and `` use document line. '' These idiomatic_expression be not earn pedagogy and need further illumination for a proper agreement.",
+        "fitness": 7
+    },
+    "12": {
+        "prompt": "To ensure the proper testing and understanding of a function, it is important to carefully analyze its docstring. This not only helps in understanding the purpose and main function of the function but also defines the boundaries and constraints within which the function operates.\n\nOnce the analysis is complete, it is necessary to create a set of Python test cases. These test cases should not only test the basic functionality of the application but also simulate real-world situations in which the application is implemented. They should cover a wide range of use cases that are designed for the intended purpose of the application.\n\nTo ensure that the function behaves correctly within its boundaries, it is essential to write Python test cases that specifically test the function on these boundaries. These test cases should cover different values, including edge cases, for each parameter that the function takes.\n\nAdditionally, it is important to infer how the function interacts with other components based on the docstring. Once these interactions and integration points are understood, it is recommended to write a Python test case that tests these interactions and integration points.\n\nBy following these steps, one can ensure thorough testing and understanding of the function, thus increasing the overall quality and reliability of the application.",
+        "fitness": 6
+    },
+    "13": {
+        "prompt": "Carefully analyze and run Python test cases that simulate real-world scenarios, not just basic functionality, using learning methods to determine expected results. These tests compare actual functions with expected results under different circumstances, and provide a variety of recommended use cases for primary purposes and functions.",
+        "fitness": 5
+    },
+    "14": {
+        "prompt": " From the docstring, infer how this routine interact with other constituent, apply the info in the docstring, determine the require result of the part for several input_signal and compose a python test case that trial these interaction and integration item, craft python test casing that equate the genuine output of the function with these require result under different scenario.",
+        "fitness": 5
+    },
+    "15": {
+        "prompt": "\"From the docstring, infer how this function interacts with other components and identify a real-world scenario where this function could be used in a [Google Cloud] scenario.\"",
+        "fitness": 4
+    },
+    "16": {
+        "prompt": "&quot;&quot;&quot; Cross Reference: Python test cases that can be used for linear regression testing and identifying that a new change to a function does not affect its main function. This function is demonstrated in a real-world scenario. Write a Python test case that simulates this user scenario.Real world mission: For example, we have a web application that allows users to submit feedback on various products.The &quot;submit_feedback&quot; function is the function responsible for processing and editing.Cases python test: &quot;&quot; &quot; unittest def submit_feedback(return): &quot;function to submit feedback to the user&#39;s database. args: feedback (str): feedback provided by the user. Returns: str: message d &#39;success if the comment was saved successfully. is empty",
+        "fitness": 4
+    },
+    "17": {
+        "prompt": "\"Using docstring, define a real-world scenario where this function could support this user scenario.\"",
+        "fitness": 4
+    },
+    "18": {
+        "prompt": "```python\ndef search_engine_query(keyword):\n  \"\"\"This function can be used in a search engine to retrieve information based on user input.\n\n  Args:\n    keyword: The keyword to search for.\n\n  Returns:\n    A list of results that match the keyword.\n  \"\"\"\n\n  # Simulate a search engine query where the user inputs a keyword and the function retrieves\n  # results that match the keyword.\n\n  results = []\n  for document in documents:\n    if keyword in document:\n      results.append(document)\n  return results\n```",
+        "fitness": 3
+    },
+    "19": {
+        "prompt": " use the selective_information in the docstring, determine the expect lead of the office for various stimulus, encounter to it that the fresh change in the single-valued_function do not get out its best functionality as place in a real-world scenario where this office might equal used and wiliness Python quiz character that compare the literal yield of the social_function with these expect result under different scenario.",
+        "fitness": 3
+    },
+    "20": {
+        "prompt": " carefully analyse the docstring to understand the effect use and functionality of the procedure, and from the docstring, name the terminus_ad_quem and extreme within which the subroutine represent look to manoeuver. educate a go_under of python test typesetter's_case that not but test the subprogram 's basic functioning but likewise simulate real-world scenario where the procedure would represent applicable, guarantee it acquit right at its boundary and encompass a spacious cast of apply incase as evoke by the function 's signify purport.",
+        "fitness": 3
+    },
+    "21": {
+        "prompt": " If the occasion be intend to be apply in a coinciding surround as per the docstring, write a python test eccentric that examine these fundamental_interaction and integrating point, and create python psychometric_test case to mental_test its doings under co-occurrent performance, derive how this function interact with former constituent from the docstring.",
+        "fitness": 3
+    },
+    "22": {
+        "prompt": "Construct a series of Python test cases that test the function in a sequence, each dependent on the outcome of the previous test, as guided by the docstring.",
+        "fitness": 2
+    },
+    "23": {
+        "prompt": "From the documentation chain, identify the limitations and redundancy within which the feature is expected to operate, and carefully analyze the documentation chain to understand the main purpose and functionality of the feature. Develop a set of Python test cases that specifically test the function on these boundaries, ensure that it behaves correctly on its boundaries, and simulate real-world situations where the function will be applied. Make sure these test cases cover a wide range of use cases as indicated by the intent of the feature.",
+        "fitness": 2
+    },
+    "24": {
+        "prompt": "from the document chain; Explain how this function interacts with other components. Write a Python test that tests this interaction with integration points. Can you clarify what you mean by &quot;stop following lines and return a new sentence&quot; and &quot;use document line&quot;?",
+        "fitness": 2
+    }
+}

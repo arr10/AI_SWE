@@ -1,0 +1,82 @@
+{
+    "0": {
+        "prompt": "Generate Python test cases to check the compatibility of the function with different environments or Python versions, as inferred from the docstring.",
+        "fitness": 9
+    },
+    "1": {
+        "prompt": "Learn how this feature interacts with other components in the documentation.",
+        "fitness": 7
+    },
+    "2": {
+        "prompt": "\"From the docstring, infer how this function interacts with other components and identify a real-world scenario where this function could be used in a [Google Cloud] scenario.\"",
+        "fitness": 4
+    },
+    "3": {
+        "prompt": "```python\ndef search_engine_query(keyword):\n  \"\"\"This function can be used in a search engine to retrieve information based on user input.\n\n  Args:\n    keyword: The keyword to search for.\n\n  Returns:\n    A list of results that match the keyword.\n  \"\"\"\n\n  # Simulate a search engine query where the user inputs a keyword and the function retrieves\n  # results that match the keyword.\n\n  results = []\n  for document in documents:\n    if keyword in document:\n      results.append(document)\n  return results\n```",
+        "fitness": 3
+    },
+    "4": {
+        "prompt": "Construct a series of Python test cases that test the function in a sequence, each dependent on the outcome of the previous test, as guided by the docstring.",
+        "fitness": 2
+    },
+    "5": {
+        "prompt": "From the documentation chain, identify the limitations and redundancy within which the feature is expected to operate, and carefully analyze the documentation chain to understand the main purpose and functionality of the feature. Develop a set of Python test cases that specifically test the function on these boundaries, ensure that it behaves correctly on its boundaries, and simulate real-world situations where the function will be applied. Make sure these test cases cover a wide range of use cases as indicated by the intent of the feature.",
+        "fitness": 2
+    },
+    "6": {
+        "prompt": "Create Python test cases that can be used for regression testing, ensuring that the new changes in the function do not break its existing functionality as described in the docstring.",
+        "fitness": 1
+    },
+    "7": {
+        "prompt": "Using the information in the docstring, determine the expected results of the function for various inputs. Craft Python test cases that compare the actual output of the function with these expected results under different scenarios.",
+        "fitness": 1
+    },
+    "8": {
+        "prompt": "If the function is intended to be used in a concurrent environment as per the docstring, create Python test cases to test its behavior under concurrent execution.",
+        "fitness": 1
+    },
+    "9": {
+        "prompt": " From the docstring, generalize how this function interact with other component and key_out a real-world scenario where this part might Be habituate. indite a python quiz character that exam these interaction and integration breaker_point and simulate this substance_abuser scenario.",
+        "fitness": 1
+    },
+    "10": {
+        "prompt": "Using docstring, define a real-world scenario where this function could be used. Write a Python test case that simulates this user scenario. msgstr &quot;Using docstring, define a real-world scenario where this function might be used.&quot; and &quot;Write a Python test case that simulates this user scenario.&quot; The combined sentence will be: &quot;Using docstring, identify a real-world scenario where this feature could be used and write a Python test case that simulates this user scenario.&quot;",
+        "fitness": 1
+    },
+    "11": {
+        "prompt": "From the docstring, infer how this function interacts with other components. Write a Python test case that tests these interactions and integration points.",
+        "fitness": 0
+    },
+    "12": {
+        "prompt": "Using the docstring, identify a real-world scenario where this function might be used. Write a Python test case that simulates this user scenario.",
+        "fitness": 0
+    },
+    "13": {
+        "prompt": "Carefully analyze the docstring to understand the core purpose and functionality of the function. Develop a set of Python test cases that not only test the function's basic operations but also simulate real-world scenarios where the function would be applicable. Ensure these test cases cover a wide range of use cases as suggested by the function's intended purpose.",
+        "fitness": 0
+    },
+    "14": {
+        "prompt": "Read the provided docstring and list all the parameters the function takes. For each parameter, create a test case in Python that specifically tests different values, including edge cases.",
+        "fitness": 0
+    },
+    "15": {
+        "prompt": "From the docstring, identify the limits and extremes within which the function is expected to operate. Write Python test cases that specifically test the function at these limits, ensuring it behaves correctly at its boundaries.",
+        "fitness": 0
+    },
+    "16": {
+        "prompt": "From the docstring, infer how this function interacts with other components and write a Python test case that tests these interactions and integration points, and list all the parameters the function takes. For each parameter, create a test case in Python that specifically tests different values, including edge cases.",
+        "fitness": 0
+    },
+    "17": {
+        "prompt": "Carefully analyze the docstring to understand the purpose and main function of the function, and from the docstring, define the boundaries and constraints that the function works under. Create a set of Python test cases that not only test the basic functionality of the application, but also simulate real-world situations in which the application is implemented. Make sure that these test cases use a wide range of use cases as designed for the intended purpose of the application. Write Python test cases that specifically test the function on these boundaries to ensure that it behaves correctly within its boundaries.",
+        "fitness": 0
+    },
+    "18": {
+        "prompt": " use the docstring, create python trial compositor's_case that can be victimised for regression test, control that the new change in the part execute not bust its exist functionality as report in the docstring. discover a real-world scenario where this go might live utilise and write a Python test display_case that simulate this user scenario.",
+        "fitness": 0
+    },
+    "19": {
+        "prompt": " use the docstring, identify a Python try case that can Be secondhand for regress prove, see_to_it that the new change in the function exercise non get_out its be functionality as identify in a real-world scenario where this office might beryllium ill-used.",
+        "fitness": 0
+    }
+}
