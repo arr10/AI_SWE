@@ -77,7 +77,7 @@ def works(u, z):
 
 
 
-def fitness(prompt):
+def testcase_fitness(prompt):
     file_name = 'correct_'
     correct = 0
 
@@ -92,12 +92,11 @@ def fitness(prompt):
 
         if ret_code == 0:
             correct += 1
-            print("yey")
         
     return correct
 
 
 
-print(fitness(default_prompt))
+# print(fitness(default_prompt))
 
 # fitness_testcase_generation('correct_1', [[1,2]])
