@@ -81,7 +81,7 @@ def testcase_fitness(prompt):
     file_name = 'correct_'
     correct = 0
 
-    for i in range(1, 6):
+    for i in range(1, 21):
         fp = 'testcases/' + file_name + str(i) + '.py'
         with open(fp, 'r') as f:
             code = f.read()

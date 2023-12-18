@@ -26,9 +26,3 @@ def correct_14(a: str, b: str) -> str:
 
     return ''.join(reversed(s))
 
-
-def test_correct_14():
-    assert correct_14("11", "1") == "100"
-    assert correct_14("1010", "1011") == "10101"
-    
-test_correct_14()

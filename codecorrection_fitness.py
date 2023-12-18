@@ -92,36 +92,19 @@ def works(u, z):
     z /= u
     return 2*z + u
 '''
-# ex = global_prompt.format(variable_prompt=default_prompt, variable_code=code)
-# output = palm_completion(ex)
-# print(output)
 
-
-# code = '\n'
-# fp = 'testcases/buggy_6.py'
-# with open(fp, 'r') as f:
-#     code += f.read()
-
-# code += "\n\n"
-# fp2 = 'testcases/test_cases_6.py'
-# with open(fp2, 'r') as g:
-#     code += g.read()
-
-# print(code)
 
 
 def bugfix_fitness(prompt):
     file_name = 'buggy_'
     correct = 0
 
-    for i in range(6, 11):
+    for i in range(1, 21):
         fp = 'testcases/' + file_name + str(i) + '.py'
         with open(fp, 'r') as f:
             code = f.read()
         this_prompt = global_prompt.format(variable_prompt=prompt, variable_code=code)
         output = palm_completion(this_prompt)
-
-        print("OUTPUT:\n", output)
 
         ex_code = output + "\n\n"
         fp2 = 'testcases/test_cases_' + str(i) + '.py'
@@ -129,17 +112,10 @@ def bugfix_fitness(prompt):
         with open(fp2, 'r') as g:
             ex_code += g.read()
 
-        print("COMPLETE ONE: \n\n\n\n")
-        print(ex_code)
-        
-        
         result = subprocess.run(['python', '-c', ex_code], stdout=subprocess.PIPE, text=True)
-        print("RESULT: ", result.returncode)
-        print("\n\n\n\n")
 
         if result.returncode == 0:
             correct += 1
-            print("yey")
         
     return correct
 

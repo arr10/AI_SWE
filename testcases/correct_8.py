@@ -24,18 +24,3 @@ def correct_8(seed):
     result = seed + replicator
     return result
 
-
-# def test_cases_8():
-#     input_string = "hello"
-#     assert(correct_8(input_string) == 'helloifmmp')
-
-#     input_string = 'Sunny day'
-#     assert(correct_8(input_string) == 'Sunny dayTvooz!ebz')
-
-#     input_string = 'timber-timber'
-#     assert(correct_8(input_string) == 'timber-timberujncfs.ujncfs')
-
-
-# test_cases_8()
-
-print(correct_8('timber-timber'))

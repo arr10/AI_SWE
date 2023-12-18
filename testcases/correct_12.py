@@ -20,12 +20,3 @@ def correct_12(nums) -> int:
             max2 = n
     return max1*max2-min1*min2
 
-
-
-def test_correct_12():
-    input1 = [5,6,2,7,4]
-    input2 = [4,2,5,9,7,4,8]
-    assert correct_12(input1) == 34
-    assert correct_12(input2) == 64
-
-test_correct_12()

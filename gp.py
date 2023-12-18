@@ -27,8 +27,8 @@ class Promt:
 
 def gp(init_population, data_type):
 
-    population = init_population[:6]
-    population = random.sample(population, 5)
+    population = init_population
+    population = random.sample(population, 10)
     for i in range(len(population)):
         population[i] = Promt(population[i], data_type)
         population[i].evaluate()

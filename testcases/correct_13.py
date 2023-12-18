@@ -18,10 +18,3 @@ bool:
         x = x//10
     return newNum == inputNum
 
-
-def test_correct_13():
-    assert correct_13(121) == True
-    assert correct_13(10) == False
-    assert correct_13(-121) == False
-
-test_correct_13()
