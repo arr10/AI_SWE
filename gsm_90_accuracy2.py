@@ -1,22 +1,14 @@
+import subprocess
 import google.generativeai as palm
+import os
+from dotenv import load_dotenv
 import json
 import re
-import time
-import random
-import os
-from tenacity import (
-    retry,
-    stop_after_attempt,
-    wait_random_exponential,
-)
-from dotenv import load_dotenv
-import asyncio
+
 load_dotenv()
 
-api_key = os.getenv('PALM2_API_KEY')
+palm.configure(api_key=os.getenv('PALM2_API_KEY'))
 model = 'models/text-bison-001'
-
-palm.configure(api_key=api_key)
 
 answer_extraction_prompt = {
     "integer": "\n\n--------------------------------------\n\nReturn the answer in integer. Only the answer. No explanation. No extra words. Just one integer.",
@@ -24,28 +16,39 @@ answer_extraction_prompt = {
     "multiple choice": "\n\n--------------------------------------\n\nReturn the answer in one of A, B, C, D, E. Only the answer. No explanation. No extra words. Just one letter."
 }
 
-file = open("datasets/mix_reasoning.json", mode="r")
-reasoning_dataset = json.load(file)
-file.close()
-file = open("datasets/gsm8k_90.json", mode="r")
-gsm8k_dataset = json.load(file)
-file.close()
-file = open("datasets/gsm8k_10.json", mode="r")
-gsm8k_10_dataset = json.load(file)
-file.close()
+def passes(file_name, argus):
+    """
+    Assumes file name passed is without .py suffix and it is the same as function name
+    args is the test case to be tested, passed in a list form
+    file resides in testcases directory, which i turned into a package
+    """
+    code = f'''
+from testcases.{file_name} import {file_name}
+
+{file_name}({", ".join(str(x) for x in argus)})
+
+'''
+    result = subprocess.run(['python', '-c', code], stdout=subprocess.PIPE, text=True)
+    return result.returncode
 
 
-@retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(2))
+
+global_prompt = """
+{variable_prompt}
+ONLY OUTPUT THE CORRECT ANSWER. DO NOT RETURN ANY TEXT
+{variable_question}
+"""
+
+
+
 def palm_completion(prompt):
     completion = palm.generate_text(
-    model=model,
-    prompt=prompt,
-    temperature=0,
-    # The maximum length of the response
-    max_output_tokens=800,
+        model=model,
+        prompt=prompt,
+        temperature=0.8,
+        max_output_tokens=800,
     )
     return completion.result
-
 
 def get_answer(question, template, answer_type):
     """
@@ -86,50 +89,48 @@ def get_answer(question, template, answer_type):
         return answer_text.strip()
     
 
-def fitness_reasoning(template):
-    count = 0
-    total = 0
-    datasets = gsm8k_10_dataset
-    for dataset in datasets:
-        answer_type = 'integer'
-        if dataset in ['aqua', 'date_understanding', 'tracking_shuffled_objects', 'commonsense_qa']:
-            answer_type = 'multiple choice'
-        questions = datasets[dataset]
-        for q in questions:
-            if '.' in q['answer']:
-                answer_type = 'float'
-            ans = get_answer(q['question'], template, answer_type)
-            if not ans:
-                continue
-            
-            count += 1
-            if str(ans)==str(q["answer"]):
-                total += 1
-            print(ans, q["answer"], count, total)
-    if count == 0:
-        return 0
-    return total / count
-# def fitness(template, questions):
-def fitness(template):
-    
-    """
-    """
-    
-    return fitness_reasoning(template)
+default_prompt = '''
+Initiating with a deep understanding of the problem, formulate and execute a well-considered strategy.
+'''
 
-######## TEST ##########
-if __name__ == "__main__":
-    t = time.time()
-    fit = fitness_reasoning("Firstly, ")
-    print(fit)
-    print(time.time() - t)
+code = '''
+def works(u, z):
+    u += 2
+    z /= u
+    return 2*z + u
+'''
+# ex = global_prompt.format(variable_prompt=default_prompt, variable_code=code)
+# output = palm_completion(ex)
+# print(output)
 
-        
-        
-        
-            
-        
+
+
+def fitness(prompt):
+    json_file_path = "datasets/gsm8k_90.json"
+    correct = 0
+    tnumber = 0
+
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
     
-    
+    gsm8k_samples = data["gsm8k"]
+
+    for sample in gsm8k_samples:
+        question = sample["question"]
+        answer = sample["answer"]
+        output = get_answer(question, default_prompt, 'integer')
+        if answer == str(output):
+            correct += 1
+        tnumber += 1
+
+        print("correct: ", correct)
+        print(output, answer)
     
 
+    return (correct/tnumber)*100
+
+
+
+print(fitness(default_prompt))
+
+# fitness_testcase_generation('correct_1', [[1,2]])

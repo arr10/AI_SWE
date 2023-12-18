@@ -1,0 +1,28 @@
+{
+  "gsm8k": [
+    {
+      "sample_index": 4719,
+      "question": "Sid takes $48 with him on a shopping trip to the mall.  He spent some of his money on computer accessories and another $8 on snacks. After these purchases, he only has $4 more than half of his original money left. How much did he spend on computer accessories?",
+      "answer": "12",
+      "reasoning": "Half of Sid's original money is $48/2 = $<<48/2=24>>24.\nSid has only $24 + $4 = $<<24+4=28>>28 left after his purchases.\nHe had $28 + $8 = $<<28+8=36>>36 before he spent $8 on snacks.\nSo, Sid spent $48 - $36 = $<<48-36=12>>12 on computer accessories.\n"
+    },
+    {
+      "sample_index": 1348,
+      "question": "A single kabob stick has 4 cubes of beef. A slab of beef that costs $25 can be cut into 80 cubes. How much must Simon spend to make 40 kabob sticks?",
+      "answer": "50",
+      "reasoning": "One slab of beef can make 80/4 = <<80/4=20>>20 kabob sticks.\nTo make 40 kabob sticks, Simon needs 40/20 = <<40/20=2>>2 slabs of beef.\nSimon must spend $25 x 2 = $<<25*2=50>>50\n"
+    },
+    {
+      "sample_index": 8107,
+      "question": "Tommy caught 3 more fish than Darren and Darren caught 6 less than Naomi. If Naomi caught 17 fish, how many fish did Tommy catch?",
+      "answer": "14",
+      "reasoning": "Darren caught 17 - 6 = <<17-6=11>>11 fish\nTommy caught 11 + 3 = <<11+3=14>>14 fish\n"
+    },
+    {
+      "sample_index": 1425,
+      "question": "Betty and Dora started making some cupcakes at the same time. Betty makes 10 cupcakes every hour and Dora makes 8 every hour. If Betty took a two-hour break, what is the difference between the number of cupcakes they made after 5 hours?",
+      "answer": "10",
+      "reasoning": "Dora made 8 cupcakes per hour for 5 hours for a total of 8*5 = <<8*5=40>>40 cupcakes\nBetty took a 2-hour break so she spent 5-2 = <<5-2=3>>3 hours making cupcakes\nBetty made 10 cupcakes per hour for 3 hours for a total of 10*3 = <<10*3=30>>30 cupcakes\nThe difference between the number of cupcakes they made is 40-30 = <<40-30=10>>10 cupcakes\n"
+    }
+  ]
+}

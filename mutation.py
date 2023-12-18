@@ -10,13 +10,14 @@ import stanza
 from nltk import Tree
 from dotenv import load_dotenv
 import google.generativeai as palm
+import ssl
 
-try:
-    stanza.download('en', processors='tokenize,pos,lemma,parse,depparse')
-except Exception as e:
-    stanza.install_corenlp()
+# try:
+#     stanza.download('en', processors='tokenize,pos,lemma,parse,depparse')
+# except Exception as e:
+#     stanza.install_corenlp()
 
-from stanza.server import CoreNLPClient
+# from stanza.server import CoreNLPClient
 
 # try:
 #     _create_unverified_https_context = ssl._create_unverified_context
@@ -98,6 +99,7 @@ def mutation_word_level(text):
 
 def split_phrase(text):
     with CoreNLPClient(
+            # start_server=StartServer.TRY_START,
             annotators=['tokenize', 'pos', 'lemma', 'parse', 'depparse'],
             output_format="json",
             timeout=30000,
@@ -132,18 +134,29 @@ def split_phrase(text):
     return merged
 
 
+def sentence_splitter(sentence):
+    words = sentence.split()
+    min_words_per_phrase = 3
+    max_words_per_phrase = len(words) // 2
+    words_per_phrase = random.randint(min_words_per_phrase, max_words_per_phrase)
+    phrases = [words[i:i + words_per_phrase] for i in range(0, len(words), words_per_phrase)]
+    result_sentences = [' '.join(phrase) for phrase in phrases]
+
+    return result_sentences
+
+
 def make_input(phrase_list):
     filtered_parts = [part for part in phrase_list if len(part.split()) > 1]
 
     if filtered_parts:
         selected_part = random.choice(filtered_parts)
         phrase_list[phrase_list.index(selected_part)] = '[BLANK] '
-        return ''.join(phrase_list)
+        return ' '.join(phrase_list)
 
     else:
         selected_part = random.choice(phrase_list)
         phrase_list[phrase_list.index(selected_part)] = '[BLANK] '
-        return ''.join(phrase_list)
+        return ' '.join(phrase_list)
 
 
 def palm_completion(prompt):
@@ -160,7 +173,7 @@ def palm_completion(prompt):
 
 
 def mutation_sent_comp(prompt):
-    phrases_list = split_phrase(prompt)
+    phrases_list = sentence_splitter(prompt)
     w_blank = make_input(phrases_list)
     input_prompt = global_prompt.format(variable_string=w_blank)
     output = palm_completion(input_prompt)
@@ -199,7 +212,6 @@ def mutation_backtranslation(prompt):
             prompt = new_prompt
             source = language
         # in case tranlsation fails do nothing
-        print(prompt)
 
     new_prompt = get_translation(prompt, source, 'en')
     # To ensure return is always in english
@@ -207,7 +219,6 @@ def mutation_backtranslation(prompt):
         prompt = temp
     else:
         prompt = new_prompt
-    print(prompt)
     return prompt
 
 
@@ -216,15 +227,15 @@ def mutate(prompt, rate=1):
     p = random.random()
     if p > rate:
         return prompt
-    r = random.randint(1, 3)
-    r = 1
+    r = random.randint(1, 2)
+    r = 3
     match r:
         case 1:
             return mutation_backtranslation(prompt)
         case 2:
-            return mutation_sent_comp(prompt)
-        case 3:
             return mutation_word_level(prompt)
+        case 3:
+            return mutation_sent_comp(prompt)
 
 
 if (__name__ == '__main__'):

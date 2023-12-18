@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def get_initial_population(type='reasoning'):
     if type == 'reasoning':
         return reasoning_initial_population()

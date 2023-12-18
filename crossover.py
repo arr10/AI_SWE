@@ -1,20 +1,42 @@
 import random
-import openai
+from openai import OpenAI
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+client = OpenAI(api_key = os.getenv('OPENAI_API_KEY'))
+
 
 def crossover(parent1, parent2, rate):
-    
-    openai.api_key = ''
+        
     if random.random() < rate:
-        messages = [
-        {"role": "user", "content": "Crossover following sentences and return two sentences: " + parent1 + ", " + parent2}
-        ]
-        chat = openai.Completion.create(
-            model="gpt-3.5-turbo", messages= messages
+        
+        prompt = f"Crossover the following sentences and return a new sentence: {parent1}, {parent2}"
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            temperature=2
         )
 
-        ans = chat.choices[0].message.content.lower()
-        off1 = ans
-        off2 = ans
+        generated_sentence = response.choices[0].message.content
+
+        print(generated_sentence)#chat.choices[0].message.content.lower()
+        off1 = generated_sentence
+        
+        prompt = f"Crossover the following sentences and return a new sentence: {parent1}, {parent2}"
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            temperature=2
+        )
+
+        generated_sentence = response.choices[0].message.content
+
+        off2 = generated_sentence
     else:
         off1 = parent1
         off2 = parent2

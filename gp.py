@@ -4,6 +4,7 @@ from fitness import fitness
 from crossover import crossover
 from mutation import mutate
 from selection import select
+import random
 
 
 class Promt:
@@ -19,6 +20,7 @@ class Promt:
 def gp(init_population):
 
     population = init_population
+    population = random.sample(population, 5)
     for i in range(len(population)):
         population[i] = Promt(population[i])
         population[i].evaluate()
@@ -31,7 +33,7 @@ def gp(init_population):
 
     rate_mutation = 1  # probability of mutation happening
 
-    select_const = 10  # number of prompts to be selected for random selection
+    select_const = 3  # number of prompts to be selected for random selection
 
     while count < budget:
         next_gen = []
@@ -40,11 +42,15 @@ def gp(init_population):
 
             p1 = select(select_const, population)
             p2 = select(select_const, population)
-
-            o1, o2 = crossover(p1.prompt, p2.prompt, rate_crossover)
-
-            o1 = mutate(o1, rate_mutation)
-            o2 = mutate(o2, rate_mutation)
+            try:
+                o1, o2 = crossover(p1.prompt, p2.prompt, rate_crossover)
+            except:
+                x = 1
+            try:
+                o1 = mutate(o1, rate_mutation)
+                o2 = mutate(o2, rate_mutation)
+            except:
+                x = 1
 
             o1, o2 = Promt(o1), Promt(o2)
 
