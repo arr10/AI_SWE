@@ -227,7 +227,7 @@ def mutate(prompt, rate=1):
     p = random.random()
     if p > rate:
         return prompt
-    r = random.randint(1, 2)
+    r = random.randint(1, 3)
     match r:
         case 1:
             return mutation_backtranslation(prompt)
