@@ -89,7 +89,7 @@ def get_answer(question, template, answer_type):
 def fitness_reasoning(template):
     count = 0
     total = 0
-    datasets = gsm8k_10_dataset
+    datasets = reasoning_dataset
     for dataset in datasets:
         answer_type = 'integer'
         if dataset in ['aqua', 'date_understanding', 'tracking_shuffled_objects', 'commonsense_qa']:
