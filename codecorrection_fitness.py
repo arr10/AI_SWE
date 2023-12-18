@@ -110,7 +110,7 @@ def works(u, z):
 # print(code)
 
 
-def fitness(prompt):
+def bugfix_fitness(prompt):
     file_name = 'buggy_'
     correct = 0
 
@@ -133,7 +133,6 @@ def fitness(prompt):
         print(ex_code)
         
         
-
         result = subprocess.run(['python', '-c', ex_code], stdout=subprocess.PIPE, text=True)
         print("RESULT: ", result.returncode)
         print("\n\n\n\n")
@@ -144,6 +143,3 @@ def fitness(prompt):
         
     return correct
 
-
-
-print(fitness(default_prompt))

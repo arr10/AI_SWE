@@ -1,0 +1,46 @@
+{
+    "0": {
+        "prompt": "Let's think about this logically.",
+        "fitness": 0.7
+    },
+    "1": {
+        "prompt": "Let&#39;s solve this problem step by step and think like a detective.",
+        "fitness": 0.625
+    },
+    "2": {
+        "prompt": "First,",
+        "fitness": 0.6
+    },
+    "3": {
+        "prompt": "Let's think like a detective step by step.",
+        "fitness": 0.6
+    },
+    "4": {
+        "prompt": "Let's solve this problem by splitting it into steps.",
+        "fitness": 0.6
+    },
+    "5": {
+        "prompt": "Let's think step by step.",
+        "fitness": 0.6
+    },
+    "6": {
+        "prompt": "Let&#39;s think like a researcher and solve this problem, breaking it down step by step.",
+        "fitness": 0.6
+    },
+    "7": {
+        "prompt": "Let&#39;s determine what the problem really is",
+        "fitness": 0.6
+    },
+    "8": {
+        "prompt": "Let&#39;s think like a detective and solve this problem by analyzing it step by step.",
+        "fitness": 0.5555555555555556
+    },
+    "9": {
+        "prompt": "\"Be a detective and solve this problem by splitting it into steps step by step.\"",
+        "fitness": 0.5
+    },
+    "10": {
+        "prompt": " let 's identify the primary event at reach.",
+        "fitness": 0.4
+    }
+}

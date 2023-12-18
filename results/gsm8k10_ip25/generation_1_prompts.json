@@ -1,0 +1,46 @@
+{
+    "0": {
+        "prompt": "Collect all the necessary information",
+        "fitness": 0.7
+    },
+    "1": {
+        "prompt": "First let&#39;s look at the facts and think step by step.",
+        "fitness": 0.7
+    },
+    "2": {
+        "prompt": " countenance 's think pace by split this trouble into step.",
+        "fitness": 0.7
+    },
+    "3": {
+        "prompt": "Let's solve this problem by splitting it into steps.",
+        "fitness": 0.6
+    },
+    "4": {
+        "prompt": "Let's think like a detective step by step.",
+        "fitness": 0.6
+    },
+    "5": {
+        "prompt": "First,",
+        "fitness": 0.6
+    },
+    "6": {
+        "prompt": "Let's be realistic and think step by step.",
+        "fitness": 0.6
+    },
+    "7": {
+        "prompt": "Let's think step by step.",
+        "fitness": 0.6
+    },
+    "8": {
+        "prompt": " first, let 's exist realistic and think tone by step.",
+        "fitness": 0.6
+    },
+    "9": {
+        "prompt": "Let&#39;s think step by step and solve this problem by breaking it down into steps.",
+        "fitness": 0.6
+    },
+    "10": {
+        "prompt": " net_ball 's insight some melodic_theme.",
+        "fitness": 0.0
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "0": {
+        "prompt": "Let's think step by step.",
+        "fitness": 0.8
+    },
+    "1": {
+        "prompt": "Let's be realistic and think step by step.",
+        "fitness": 0.8
+    },
+    "2": {
+        "prompt": "let's understand the main concepts.",
+        "fitness": 0.8
+    },
+    "3": {
+        "prompt": "First, let\u2019s tackle the problem from a different perspective.",
+        "fitness": 0.8
+    },
+    "4": {
+        "prompt": "Let's solve this problem by splitting it into steps.",
+        "fitness": 0.7
+    },
+    "5": {
+        "prompt": "First,",
+        "fitness": 0.7
+    },
+    "6": {
+        "prompt": "Let's think about this logically.",
+        "fitness": 0.7
+    },
+    "7": {
+        "prompt": "\"Solve the math problem by splitting it into steps, first.\"",
+        "fitness": 0.7
+    },
+    "8": {
+        "prompt": "let's gather all the necessary information.",
+        "fitness": 0.7
+    },
+    "9": {
+        "prompt": "\"First, let's solve this problem separately then we can solve them together\"",
+        "fitness": 0.7
+    },
+    "10": {
+        "prompt": " I 'm bad, but it be non possible to bring_forth a meaningful novel condemnation by baffle over the Saame doom twice( `` number_one, first, '') as in_that_respect would be no new information or structure to make a ordered yield. Could you please allow_for dissimilar prison_term that you would like to be hybridise over?",
+        "fitness": 0.6666666666666666
+    },
+    "11": {
+        "prompt": "First, let&#39;s address these issues separately; Initiative, started.",
+        "fitness": 0.6666666666666666
+    },
+    "12": {
+        "prompt": "First of all,",
+        "fitness": 0.6
+    },
+    "13": {
+        "prompt": "First, let&#39;s solve this problem separately.",
+        "fitness": 0.6
+    },
+    "14": {
+        "prompt": "\"First, let's solve this problem separately, one by one to start.\"",
+        "fitness": 0.6
+    },
+    "15": {
+        "prompt": "First, let&#39;s tackle this issue separately, let&#39;s take the first step",
+        "fitness": 0.6
+    },
+    "16": {
+        "prompt": " opening, beginning, get-go.",
+        "fitness": 0.5555555555555556
+    },
+    "17": {
+        "prompt": " Kickoff, I whirl to the salt away to steal grocery and showtime, I go to the salt away to steal grocery_store.",
+        "fitness": 0.5555555555555556
+    },
+    "18": {
+        "prompt": "The first race may follow the initiation phase. Note first that the new sentence may be written in lowercase, depending on the context, while the corresponding sentence may be written in uppercase.",
+        "fitness": 0.5
+    },
+    "19": {
+        "prompt": "Let&#39;s start with this problem one by one, basically.",
+        "fitness": 0.5
+    },
+    "20": {
+        "prompt": " kickoff, I go to the salt_away to steal grocery.",
+        "fitness": 0.4
+    },
+    "21": {
+        "prompt": " Kickoff, I go to the lay_in to steal foodstuff. The newfangled condemn after crossover: Kickoff, I run to steal food_market at the store.",
+        "fitness": 0.375
+    },
+    "22": {
+        "prompt": " 1st, commencement, \u2192 initiative, start, note: The New condemnation may follow write in all lowercase or with appropriate sentence capitalization look on the circumstance.",
+        "fitness": 0.3333333333333333
+    }
+}

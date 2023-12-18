@@ -1,0 +1,102 @@
+{
+    "0": {
+        "prompt": " lease 's assemble all the information we want.",
+        "fitness": 0.9
+    },
+    "1": {
+        "prompt": "Let's think step by step.",
+        "fitness": 0.8
+    },
+    "2": {
+        "prompt": "Let's be realistic and think step by step.",
+        "fitness": 0.8
+    },
+    "3": {
+        "prompt": "let's understand the main concepts.",
+        "fitness": 0.8
+    },
+    "4": {
+        "prompt": "First, let\u2019s tackle the problem from a different perspective.",
+        "fitness": 0.8
+    },
+    "5": {
+        "prompt": "Let&#39;s think about it and solve this problem by breaking it down into steps.",
+        "fitness": 0.8
+    },
+    "6": {
+        "prompt": " first, get_together all the necessary information, allow 's break this job down into step, and then analyse them.",
+        "fitness": 0.8
+    },
+    "7": {
+        "prompt": "Let&#39;s break this problem down into steps, gather all the information we need to think about it, and then analyze it.",
+        "fitness": 0.8
+    },
+    "8": {
+        "prompt": " have 's start with the send-off one at a time and lick this problem by split it into step.",
+        "fitness": 0.7777777777777778
+    },
+    "9": {
+        "prompt": "&quot;Do you want a new sentence added?&quot;",
+        "fitness": 0.7777777777777778
+    },
+    "10": {
+        "prompt": "Solve the first math problem step by step.",
+        "fitness": 0.7777777777777778
+    },
+    "11": {
+        "prompt": " Lashkar-e-Toiba 's part this problem downwards into stair and work_out it by think it through.",
+        "fitness": 0.7777777777777778
+    },
+    "12": {
+        "prompt": "Kickoff, first of all, I go kick off.",
+        "fitness": 0.75
+    },
+    "13": {
+        "prompt": "\"First_step, take_off\" issues separately.",
+        "fitness": 0.75
+    },
+    "14": {
+        "prompt": " first, countenance 's gather all the essential information, and_then proceed.",
+        "fitness": 0.75
+    },
+    "15": {
+        "prompt": "The first step is the beginning of a new essay",
+        "fitness": 0.7142857142857143
+    },
+    "16": {
+        "prompt": "First, let's look at these questions one by one; I used to run by myself to steal things from the store. The new brothers criticized this last conflict: Let us first look at these questions separately; I stole food from homeless people on my own initiative and solved this problem separately.",
+        "fitness": 0.7142857142857143
+    },
+    "17": {
+        "prompt": "Let's solve this problem by splitting it into steps.",
+        "fitness": 0.7
+    },
+    "18": {
+        "prompt": "First,",
+        "fitness": 0.7
+    },
+    "19": {
+        "prompt": "Let's think about this logically.",
+        "fitness": 0.7
+    },
+    "20": {
+        "prompt": "\"Solve the math problem by splitting it into steps, first.\"",
+        "fitness": 0.7
+    },
+    "21": {
+        "prompt": "let's gather all the necessary information.",
+        "fitness": 0.7
+    },
+    "22": {
+        "prompt": "\"First, let's solve this problem separately then we can solve them together\"",
+        "fitness": 0.7
+    },
+    "23": {
+        "prompt": "Let&#39;s break this problem down into steps and think it through.",
+        "fitness": 0.7
+    },
+    "24": {
+        "prompt": "solve this problem by breaking it into small parts.",
+        "fitness": 0.7
+    }
+}

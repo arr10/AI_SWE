@@ -5,28 +5,36 @@ from crossover import crossover
 from mutation import mutate
 from selection import select
 import random
+from testcase_fitness import testcase_fitness
+from codecorrection_fitness import bugfix_fitness
 
 
 class Promt:
-    def __init__(self, prompt):
+    def __init__(self, prompt, data_type):
         self.prompt = prompt
         self.fitness = -1
+        self.data_type = data_type
 
     def evaluate(self):
         if self.fitness == -1:
-            self.fitness = fitness(self.prompt)
+            if self.data_type == "reasoning":
+                self.fitness = fitness(self.prompt)
+            elif self.data_type == "testcase":
+                self.fitness = testcase_fitness(self.prompt)
+            elif self.data_type == "bugfix":
+                self.fitness = bugfix_fitness(self.prompt)
 
 
-def gp(init_population):
+def gp(init_population, data_type):
 
-    population = init_population
+    population = init_population[:6]
     population = random.sample(population, 5)
     for i in range(len(population)):
-        population[i] = Promt(population[i])
+        population[i] = Promt(population[i], data_type)
         population[i].evaluate()
 
     pop_size = len(init_population)
-    budget = 100
+    budget = 10
     count = 0
 
     rate_crossover = 1  # probability of crossover happening
@@ -52,7 +60,7 @@ def gp(init_population):
             except:
                 x = 1
 
-            o1, o2 = Promt(o1), Promt(o2)
+            o1, o2 = Promt(o1, data_type), Promt(o2, data_type)
 
             o1.evaluate()
             o2.evaluate()

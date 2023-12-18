@@ -24,14 +24,8 @@ answer_extraction_prompt = {
     "multiple choice": "\n\n--------------------------------------\n\nReturn the answer in one of A, B, C, D, E. Only the answer. No explanation. No extra words. Just one letter."
 }
 
-file = open("datasets/mix_reasoning.json", mode="r")
-reasoning_dataset = json.load(file)
-file.close()
 file = open("datasets/gsm8k_90.json", mode="r")
 gsm8k_dataset = json.load(file)
-file.close()
-file = open("datasets/gsm8k_10.json", mode="r")
-gsm8k_10_dataset = json.load(file)
 file.close()
 
 
@@ -86,10 +80,12 @@ def get_answer(question, template, answer_type):
         return answer_text.strip()
     
 
-def fitness_reasoning(template):
+def fitness_reasoning(template, dataset='gsm8k_90'):
     count = 0
     total = 0
-    datasets = gsm8k_10_dataset
+    file = open(f"datasets/{dataset}.json", mode="r")
+    datasets = json.load(file)
+    file.close()
     for dataset in datasets:
         answer_type = 'integer'
         if dataset in ['aqua', 'date_understanding', 'tracking_shuffled_objects', 'commonsense_qa']:
@@ -100,7 +96,6 @@ def fitness_reasoning(template):
                 answer_type = 'float'
             ans = get_answer(q['question'], template, answer_type)
             if not ans:
-                count += 1
                 continue
             
             count += 1
@@ -119,9 +114,21 @@ def fitness(template):
     return fitness_reasoning(template)
 
 ######## TEST ##########
+
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        prog='testing',
+        description='test the given prompt on a given dataset')
+    parser.add_argument('-d', '--dataset', type=str)
+    parser.add_argument('-p', '--prompt', type=str)
+    args = parser.parse_args()
+
     t = time.time()
-    fit = fitness_reasoning("Firstly, ")
+    dataset = args.dataset
+    prompt = args.prompt
+    fit = fitness_reasoning(prompt, dataset)
     print(fit)
     print(time.time() - t)
 
