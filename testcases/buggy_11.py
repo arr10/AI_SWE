@@ -10,7 +10,7 @@ def find_peaks(input):
     """
     res = []
     for i in range(1, len(input) - 1):
-        if input[i] <= input[i - 1] and input[i] <= input[i + 1]:  # Reversed the comparison to 'smaller than or equal to'
+        if input[i] <= input[i - 1] and input[i] <= input[i + 1]:  
             res.append(i)
     return res
 

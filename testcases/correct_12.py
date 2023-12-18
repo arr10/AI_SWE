@@ -1,4 +1,4 @@
-def buggy_12(nums) -> int:
+def correct_12(nums) -> int:
     """
     The product difference between two pairs (a, b) and (c, d) is defined as (a * b) - (c * d)
     Args:
@@ -12,10 +12,20 @@ def buggy_12(nums) -> int:
     for n in nums:
         if n <= min1:
             min1, min2, = n, min1
-        elif n > min2:
+        elif n < min2:
             min2 = n
-        if n > max1: 
-            max1, max1 = n, max1
+        if n >= max1:
+            max1, max2 = n, max1
         elif n > max2:
             max2 = n
     return max1*max2-min1*min2
+
+
+
+def test_correct_12():
+    input1 = [5,6,2,7,4]
+    input2 = [4,2,5,9,7,4,8]
+    assert correct_12(input1) == 34
+    assert correct_12(input2) == 64
+
+test_correct_12()
